@@ -1,4 +1,6 @@
-# Sisense [![Build Status](https://travis-ci.com/chronogolf/sisense.svg?branch=master)](https://travis-ci.com/chronogolf/sisense)
+# Sisense
+
+[![Build Status](https://travis-ci.com/chronogolf/sisense.svg?branch=master)](https://travis-ci.com/chronogolf/sisense)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sisense`. To experiment with that code, run `bin/console` for an interactive prompt.
 
