@@ -37,28 +37,41 @@ module Sisense
         request :delete, path, params
       end
 
+      def parsed_response(response, object_class:)
+        response_hash = JSON.parse(response.body)
+        if collection?(response_hash)
+          response_hash.map { |json_item| object_class.new(json_item) }
+        else
+          object_class.new(response_hash)
+        end
+      end
+
       private
 
-      def request(method, path, params)
-        case method
-        when :get
-          path_with_params = encode_path_params(path, params)
-          request = VERB_MAP[method].new(path_with_params, headers)
-        else
-          request = VERB_MAP[method].new(path, headers)
-          request.set_form_data(params)
+        def collection?(response_body)
+          response_body.is_a?(Array)
         end
-        http.request(request)
-      end
 
-      def encode_path_params(path, params)
-        encoded = URI.encode_www_form(params)
-        [path, encoded].join('?')
-      end
+        def request(method, path, params)
+          case method
+          when :get
+            path_with_params = encode_path_params(path, params)
+            request = VERB_MAP[method].new(path_with_params, headers)
+          else
+            request = VERB_MAP[method].new(path, headers)
+            request.set_form_data(params)
+          end
+          http.request(request)
+        end
 
-      def headers
-        @headers ||= { 'Authorization' => "Bearer #{Sisense.access_token}" }
-      end
+        def encode_path_params(path, params)
+          encoded = URI.encode_www_form(params)
+          [path, encoded].join('?')
+        end
+
+        def headers
+          @headers ||= { 'Authorization' => "Bearer #{Sisense.access_token}" }
+        end
     end
   end
 end
