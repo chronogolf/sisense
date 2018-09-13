@@ -3,9 +3,17 @@ require 'sisense/version'
 require 'sisense/api/client'
 require 'sisense/api/resource'
 
-require 'sisense/share'
-require 'sisense/group'
+require 'sisense/alert'
+require 'sisense/connection'
+require 'sisense/dashboard'
+require 'sisense/dataset'
 require 'sisense/elasticube'
+require 'sisense/folder'
+require 'sisense/group'
+require 'sisense/share'
+require 'sisense/translation'
+require 'sisense/user'
+require 'sisense/widget'
 
 module Sisense
   @access_token = nil
