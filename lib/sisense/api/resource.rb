@@ -23,17 +23,7 @@ module Sisense
       def self.descendants
         ObjectSpace.each_object(Class).select { |klass| klass < self }
       end
-
-      def attributes
-        instance_variables.each_with_object({}) do |instance_variable, h|
-          h[instance_variable[1..instance_variable.length]] = instance_variable_get(instance_variable)
-        end
-      end
-
-      def to_json
-        attributes.to_json
-      end
-
+      
       private
 
         def convert_to_obj(hash)
