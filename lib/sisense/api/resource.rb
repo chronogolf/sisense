@@ -46,7 +46,7 @@ module Sisense
 
         def build_object(key, value)
           return build_resource_collection(key, value) if nested_resource_collection?(key, value)
-          return build_resource(key, resource_attributes) if nested_resource?(key, value)
+          return build_resource(key, value) if nested_resource?(key, value)
           value
         end
 
