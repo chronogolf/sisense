@@ -2,8 +2,6 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-Dir[File.join(__dir__, 'endpoints', '*.rb')].each { |file| require file }
-
 module Sisense
   module API
     class Client
@@ -55,18 +53,19 @@ module Sisense
         def request(method, path, params)
           case method
           when :get
-            path_with_params = encode_path_params(path, params)
-            request = VERB_MAP[method].new(path_with_params, headers)
+            request = VERB_MAP[method].new(encode_path(path, params), headers)
           else
-            request = VERB_MAP[method].new(path, headers)
+            request = VERB_MAP[method].new(encode_path(path), headers)
             request.set_form_data(params)
           end
           http.request(request)
         end
 
-        def encode_path_params(path, params)
-          encoded = URI.encode_www_form(params)
-          [path, encoded].join('?')
+        def encode_path(path, params = nil)
+          encoded_path = URI::encode(path)
+          return path if params.nil?
+          encoded_params = URI.encode_www_form(params)
+          [encoded_path, encoded_params].join('?')
         end
 
         def headers
