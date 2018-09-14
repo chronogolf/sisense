@@ -26,9 +26,8 @@ module Sisense
 
     def api_resources
       @api_resources ||= API::Resource.descendants.each_with_object({}) do |descendant, resources|
-        next if descendant == Sisense::API::NestedResource
         resources[descendant::RESOURCE_NAME] = descendant
-      end
+      end.freeze
     end
   end
 end

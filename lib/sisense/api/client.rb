@@ -1,5 +1,6 @@
 require 'net/http'
 require 'uri'
+require 'cgi'
 require 'json'
 
 module Sisense
@@ -46,31 +47,47 @@ module Sisense
 
       private
 
-        def collection?(response_body)
-          response_body.is_a?(Array)
-        end
+      def collection?(response_body)
+        response_body.is_a?(Array)
+      end
 
-        def request(method, path, params)
-          case method
-          when :get
-            request = VERB_MAP[method].new(encode_path(path, params), headers)
-          else
-            request = VERB_MAP[method].new(encode_path(path), headers)
-            request.set_form_data(params)
+      def request(method, path, params)
+        case method
+        when :get
+          request = VERB_MAP[method].new(encode_path(path, params), headers)
+        else
+          request = VERB_MAP[method].new(encode_path(path), headers)
+          request.body = parameterize(params).to_json
+        end
+        http.request(request)
+      end
+
+      def encode_path(path, params = nil)
+        encoded_path = CGI.escape(path)
+        return path if params.nil?
+        encoded_params = URI.encode_www_form(params)
+        [encoded_path, encoded_params].join('?')
+      end
+
+      def headers
+        @headers ||= { 'Authorization' => "Bearer #{Sisense.access_token}", 'Content-Type' => 'application/json' }
+      end
+
+      def parameterize(object)
+        object.tap do |obj|
+          return object.map { |item| parameterize(item) } if object.is_a?(Array)
+          obj.keys.each do |key|
+            obj[key] = parameterize_object(obj[key]) unless obj[key].is_a?(String)
+            obj[key.to_s.camelize] = obj.delete(key)
           end
-          http.request(request)
         end
+      end
 
-        def encode_path(path, params = nil)
-          encoded_path = URI::encode(path)
-          return path if params.nil?
-          encoded_params = URI.encode_www_form(params)
-          [encoded_path, encoded_params].join('?')
-        end
-
-        def headers
-          @headers ||= { 'Authorization' => "Bearer #{Sisense.access_token}" }
-        end
+      def parameterize_object(object)
+        return parameterize(object.to_h) if Sisense::API::Resource.descendants.include?(object.class)
+        return parameterize(object) if object.is_a?(Hash)
+        return object.map { |item| item.is_a?(String) ? item : parameterize_object(item) } if object.is_a?(Array)
+      end
     end
   end
 end
