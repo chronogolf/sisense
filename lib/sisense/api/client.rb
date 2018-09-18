@@ -66,6 +66,7 @@ module Sisense
       def encode_path(path, params = nil)
         encoded_path = URI.encode(path)
         return path if params.nil?
+
         encoded_params = URI.encode_www_form(params)
         [encoded_path, encoded_params].join('?')
       end
@@ -77,6 +78,7 @@ module Sisense
       def parameterize(object)
         object.tap do |obj|
           return object.map { |item| parameterize(item) } if object.is_a?(Array)
+
           obj.keys.each do |key|
             obj[key] = parameterize_object(obj[key]) unless obj[key].is_a?(String)
             obj[key.to_s.camelize] = obj.delete(key)

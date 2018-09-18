@@ -15,6 +15,7 @@ module Sisense
 
       def self.resource_base_path(use_legacy_api: false)
         raise NotImplementedError, 'Sisense::API::Resource is an abstract class' if self == Resource
+
         path_base = use_legacy_api ? '/api/' : '/api/v1/'
         path_base + self::RESOURCE_NAME
       end
@@ -38,6 +39,7 @@ module Sisense
       def build_hash_value_from_attribute_value(attr_value)
         return attr_value.to_h if known_resource_class?(attr_value.class)
         return attr_value.map(&:to_h) if collection_of_known_resource_class?(attr_value)
+
         attr_value
       end
 
@@ -60,6 +62,7 @@ module Sisense
       def build_object(key, value)
         return build_resource_collection(key, value) if nested_resource_collection?(key, value)
         return build_resource(key, value) if nested_resource?(key, value)
+
         value
       end
 
