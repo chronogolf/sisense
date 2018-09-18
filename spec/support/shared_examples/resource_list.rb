@@ -5,7 +5,7 @@ shared_examples 'a listable resource' do
     expect(described_class.list).to be_a(Array)
   end
 
-  it "return a list of #{described_class.name} objects" do
+  it "returns a list of #{described_class.name} objects" do
     expect(described_class.list.all? { |item| item.is_a?(described_class) }).to eq true
   end
 end
