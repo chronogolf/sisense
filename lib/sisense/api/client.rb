@@ -16,6 +16,7 @@ module Sisense
       def initialize
         uri = URI.parse(Sisense.base_uri)
         @http = Net::HTTP.new(uri.host, uri.port)
+        # @http.use_ssl = true
       end
 
       attr_reader :http
@@ -63,7 +64,7 @@ module Sisense
       end
 
       def encode_path(path, params = nil)
-        encoded_path = CGI.escape(path)
+        encoded_path = URI.encode(path)
         return path if params.nil?
         encoded_params = URI.encode_www_form(params)
         [encoded_path, encoded_params].join('?')

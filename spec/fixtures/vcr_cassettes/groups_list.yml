@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://test-sisense.chronogolf.ca/api/v1/groups
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer sisense_access_token
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Etag:
+      - W/"32e-e7e74f99"
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 18 Sep 2018 12:55:44 GMT
+      Content-Length:
+      - '814'
+    body:
+      encoding: UTF-8
+      string: '[{"_id":"5b3293ab0800930a10dd0d3b","roleId":null,"name":"Admins","ad":false,"objectSid":"","dn":"","uSNChanged":"","mail":"","defaultRole":"","created":"2018-06-26T19:27:39.303Z","lastUpdated":"2018-06-26T19:27:39.303Z","ldapDomainId":null,"language":null,"admins":true},{"_id":"5b3293ab0800930a10dd0d3c","roleId":null,"name":"Everyone","ad":false,"objectSid":"","dn":"","uSNChanged":"","mail":"","defaultRole":"","created":"2018-06-26T19:27:39.312Z","lastUpdated":"2018-06-26T19:27:39.312Z","ldapDomainId":null,"language":null,"everyone":true},{"_id":"5b897fde49feca23a831b0c4","roleId":null,"name":"Golf
+        Managers","ad":false,"objectSid":"","dn":"","uSNChanged":"","mail":"","defaultRole":"consumer","created":"2018-08-31T17:50:22.817Z","lastUpdated":"2018-08-31T17:50:22.817Z","ldapDomainId":null,"language":""}]'
+    http_version:
+  recorded_at: Tue, 18 Sep 2018 12:55:44 GMT
+recorded_with: VCR 4.0.0

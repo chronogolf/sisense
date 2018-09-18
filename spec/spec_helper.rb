@@ -1,5 +1,7 @@
 require 'bundler/setup'
 require 'sisense'
+require 'webmock/rspec'
+require 'vcr'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -10,5 +12,13 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+  end
+
+  Sisense.base_uri = 'http://test-sisense.chronogolf.ca'
+  Sisense.access_token = 'sisense_access_token'
+
+  VCR.configure do |vcr_config|
+    vcr_config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+    vcr_config.hook_into :webmock
   end
 end
