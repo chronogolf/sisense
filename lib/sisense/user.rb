@@ -22,14 +22,13 @@ module Sisense
 
     def self.update(id:, params:)
       path = [resource_base_path, id].join('/')
-      response = api_client.put(path, params: params)
+      response = api_client.patch(path, params: params)
       api_client.parsed_response(response, object_class: self)
     end
 
     def self.delete(id:)
       path = [resource_base_path, id].join('/')
-      response = api_client.delete(path, params: params)
-      api_client.parsed_response(response, object_class: self)
+      api_client.delete(path)
     end
   end
 end

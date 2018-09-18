@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://test-sisense.chronogolf.ca/api/v1/users/5b3293ad1ed43bccb04e2029
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer sisense_access_token
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Etag:
+      - W/"jMIcKrU/QKqml7WthTZ7zg=="
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 18 Sep 2018 17:53:30 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '{"_id":"5b3293ad1ed43bccb04e2029","roleId":"5b3293aa1ed43bccb04e1f37","userName":"sebastien@chronogolf.ca","firstName":"sebastien","email":"sebastien@chronogolf.ca","active":true,"created":"2018-06-26T19:27:41.130Z","lastUpdated":"2018-09-11T19:48:48.127Z","lastLogin":"2018-09-11T15:11:44.138Z","groups":["5b3293ab0800930a10dd0d3b","5b3293ab0800930a10dd0d3b","5b3293ab0800930a10dd0d3b","5b3293ab0800930a10dd0d3b","5b3293ab0800930a10dd0d3b","5b3293ab0800930a10dd0d3b","5b3293ab0800930a10dd0d3b","5b3293ab0800930a10dd0d3b","5b3293ab0800930a10dd0d3b","5b3293ab0800930a10dd0d3b"],"uiSettings":{"ecmNext":{"dataPage":{"hideEcmHint":true,"hideStrip":true},"guidersShown":{"addData":true,"ecActions":true,"analytics":true},"schemas":{"schema_3e55eb62-09b9-4094-a1c3-9010cbdd9c7b":{"savedParams":{"0":{"id":"7d6889eb-949a-40aa-8a43-dd5cebd1eb8e","x":-3.7417995929718,"y":1.3409788608551,"fixed":false},"1":{"id":"eba85ba1-9ec2-432a-bebd-8f1b91cb3d34","x":1.53921401500702,"y":3.44742679595947,"fixed":false},"2":{"id":"f75f762f-6c7e-44a1-b817-b1c8e63ef625","x":0.859071135520935,"y":-2.49929928779602,"fixed":true},"3":{"id":"ec6b7689-2582-4a00-a972-4876c4647d30","x":-1.02391493320465,"y":-0.585205137729645,"fixed":true},"4":{"id":"254f5221-1227-47c0-9dba-87d1483ff3bc","x":-2.61090564727783,"y":0.268797695636749,"fixed":false},"5":{"id":"5c409eb1-1e43-480c-a958-289afc4db2a5","x":0.215881556272507,"y":0.73514062166214,"fixed":true},"6":{"id":"a2266e64-30b9-4912-a3bd-1bf2e1958df2","x":-0.508170604705811,"y":-2.03229880332947,"fixed":true},"7":{"id":"a126aede-0650-41a3-8ffd-8f240a19cfc6","x":0.629197776317596,"y":-0.843560397624969,"fixed":true},"8":{"id":"61c3244a-115e-42ff-aac9-e18774268098","x":1.50695955753326,"y":2.16202998161316,"fixed":false},"9":{"id":"HiddenTablesPin","x":-1,"y":1,"fixed":true}},"zoom":0.9},"schema_23ff4b18-9680-4e5a-973c-7a1a7439d9ec":{"savedParams":{"0":{"id":"972b7484-c77a-44a3-9494-3e0fffea37cc","x":-0.318371921777725,"y":-1.4116884469986,"fixed":false},"1":{"id":"da2f7105-c45b-46e6-87a6-3b7cb6931fca","x":-1.31726515293121,"y":-0.191725745797157,"fixed":false},"2":{"id":"9f650e47-3d70-4bc2-9b66-48643b161ee6","x":-1.8176474571228,"y":-1.60438621044159,"fixed":false},"3":{"id":"a913d094-254e-485d-bba2-c2ef19b8eae8","x":1.89005184173584,"y":0.448424279689789,"fixed":false},"4":{"id":"d5cb6ea8-465f-41ea-a5ae-e70ba6f471d7","x":-0.67078310251236,"y":1.75699532032013,"fixed":false},"5":{"id":"71f41853-efa4-4796-89a8-2ab3dbac9922","x":0.931860148906708,"y":1.83964538574219,"fixed":false},"6":{"id":"ad159624-d56b-4324-b072-e29d4812fbc9","x":1.33951997756958,"y":-1.04414641857147,"fixed":false},"7":{"id":"HiddenTablesPin","x":-1,"y":1,"fixed":true}},"zoom":1},"schema_c78bed82-a2f2-4f35-bc8d-b2fe1c519eaf":{"savedParams":{"0":{"id":"24aac464-ff8e-4193-8724-5a19b1faedcd","x":-0.13028618693351746,"y":-3.6139352321624756,"fixed":false},"1":{"id":"80304722-78ef-40b4-a071-a0b677284c49","x":4.9501495361328125,"y":-0.30644476413726807,"fixed":false},"2":{"id":"c404a517-d257-4f90-b371-88fd606bcb25","x":3.1590328216552734,"y":1.0935677289962769,"fixed":false},"3":{"id":"0d0f22ac-265b-48b0-b77f-ebbd4af53380","x":4.228388163545917,"y":-3.94945263529579,"fixed":true},"4":{"id":"db685f23-4292-4526-972f-7af1272171e0","x":0.681359052658081,"y":-0.3740939795970917,"fixed":false},"5":{"id":"107ddf0b-e454-4653-b3fe-e37f2a8fa7c2","x":0.7988114356994629,"y":-6.003888130187988,"fixed":false},"6":{"id":"6b56d806-d590-4008-8190-e5ac23bfb22d","x":2.90067982673645,"y":-1.7924681901931763,"fixed":true},"7":{"id":"c637c9f3-9fb6-4887-92de-02dbeb435ca2","x":5.503499984741211,"y":-2.746603012084961,"fixed":false},"8":{"id":"684fa18d-8011-479f-881e-72cc776930b9","x":-3.0014100074768066,"y":0.6642500758171082,"fixed":false},"9":{"id":"1e80b83f-b1db-43ec-80bf-ab31e358b58c","x":-2.005772113800049,"y":0.8488681316375732,"fixed":false},"10":{"id":"82c3a48a-e9db-4ad5-986f-c1435919f0d3","x":-3.180262327194214,"y":1.4172719717025757,"fixed":false},"11":{"id":"4aa22bb3-7a5c-4cc3-84e8-738a3bf23165","x":-3.074134588241577,"y":2.1316027641296387,"fixed":false},"12":{"id":"35f5fa32-a33a-45fd-b166-460353a0ff0a","x":-2.7803897857666016,"y":2.8576550483703613,"fixed":false},"13":{"id":"642e8eed-cf2a-401b-99f7-064cc5384143","x":-1.9939169883728027,"y":3.021360158920288,"fixed":false},"14":{"id":"115fd967-9caf-4029-a36d-efb17e003c73","x":-1.2098530530929565,"y":2.6888535022735596,"fixed":false},"15":{"id":"HiddenTablesPin","x":-1.7000000476837158,"y":1.7000000476837158,"fixed":true}},"zoom":2.0408163265306123},"schema_92a28cb2-f995-4448-9ce9-f102f48e2936":{"savedParams":{"0":{"id":"6c6516d4-eba8-470a-bc60-7cc85a7c9e16","x":0.23230242729187012,"y":2.8940587043762207,"fixed":false},"1":{"id":"bfd4f533-7222-4693-b9e7-9bfe3d07d6c5","x":0.6988446116447449,"y":1.3531603813171387,"fixed":false},"2":{"id":"e96bb8ad-5de3-464d-ae61-0d75c10a2cc9","x":3.2255783081054688,"y":0.7096999287605286,"fixed":false},"3":{"id":"d1cb1495-9dbc-4c26-83d2-4ec9f3c6a7b0","x":0.3983227014541626,"y":-0.6672309041023254,"fixed":false},"4":{"id":"d841a738-dd6e-49c3-a481-2c5e07ac3f43","x":1.3671503067016602,"y":-1.7032243013381958,"fixed":false},"5":{"id":"6dff622b-355f-4d27-9c23-babb6d48bc36","x":2.6291747093200684,"y":-0.7940535545349121,"fixed":false},"6":{"id":"a52a4f3d-f6c0-4bf7-ac79-d4839ddbb5e7","x":-2.9058339595794678,"y":-0.05652078986167908,"fixed":false},"7":{"id":"e2d64b35-6637-4dbb-ae5c-ad29fd73dbf5","x":-2.612192153930664,"y":0.3545771539211273,"fixed":false},"8":{"id":"2dcd867e-889a-438a-b70a-75a890677f58","x":-2.1926355361938477,"y":0.7266827821731567,"fixed":false},"9":{"id":"43f170a5-1ce7-4101-8bfa-4811f48cc599","x":-2.703141212463379,"y":1.361262559890747,"fixed":false},"10":{"id":"HiddenTablesPin","x":-1.399999976158142,"y":1.399999976158142,"fixed":true}},"zoom":1},"schema_314103a7-d35b-4e9b-bf21-8812a7823e33":{"savedParams":{"0":{"id":"fac89857-6902-432e-ac98-9612e68907d3","x":-0.2724619209766388,"y":-0.2581563889980316,"fixed":false},"1":{"id":"cd40f7eb-cd24-4136-a18e-2b4f6a8d8783","x":0.9613540172576904,"y":0.22590196132659912,"fixed":false}},"zoom":1},"schema_9655fb7d-a400-4d6a-bacf-ca895444eed8":{"savedParams":{"0":{"id":"a9f1060a-9bb6-43a7-b02a-019e916bdeca","x":0.5135222673416138,"y":0.13862214982509613,"fixed":false}},"zoom":0.9},"schema_c4e9dac8-a87b-4a47-be14-e83205e3985b":{"savedParams":{"0":{"id":"b6bc02e3-2b07-4e09-bcc3-d4fb74a3504b","x":-1.2384142875671387,"y":-0.7592229247093201,"fixed":true},"1":{"id":"53484225-a859-4118-ad96-b014012729e9","x":0.029219062998890877,"y":-0.38156718015670776,"fixed":true},"2":{"id":"8c53966d-4da3-4076-bb03-92524a8bbc55","x":-0.8782399892807007,"y":1.6911877393722534,"fixed":true},"3":{"id":"09f4e9fc-e51b-45b9-b4e3-24ed9ccec069","x":-1.2637906074523926,"y":0.09567029774188995,"fixed":true},"4":{"id":"9c6e0150-968f-48fa-ad9c-10250b852703","x":0.5323939919471741,"y":0.485910028219223,"fixed":true},"5":{"id":"8dbfc2a3-0d73-4bd0-a12e-fd5b06e5d2ee","x":1.3731741905212402,"y":1.4838000535964966,"fixed":false},"6":{"id":"21d25772-2e34-49e2-9b2a-abbf16a850f7","x":1.4625906944274902,"y":-0.0018129060044884682,"fixed":false},"7":{"id":"HiddenTablesPin","x":-1.399999976158142,"y":1.399999976158142,"fixed":true}},"zoom":0.9},"schema_9bd94cad-f21e-4c3a-a54a-705ca3de4b5d":{"savedParams":{"0":{"id":"af63b8ab-f879-464c-b9fd-ed9ac0b70b50","x":5.2604079246521,"y":1.063899278640747,"fixed":false},"1":{"id":"2c2f1b61-4776-4605-bb2e-cfca757145af","x":0.03023332543671131,"y":-4.369115829467773,"fixed":false},"2":{"id":"f7ee6da8-3938-474a-bb8e-03b245c9b3f2","x":1.6217292547225952,"y":-1.5379581451416016,"fixed":false},"3":{"id":"b6a1bda6-8b7a-4c1d-a04c-f4991ea42217","x":-0.5846776366233826,"y":-3.292785882949829,"fixed":false},"4":{"id":"bbc1eb8a-33c4-44d7-bf30-cb10dc8b579c","x":2.9833297729492188,"y":1.660766363143921,"fixed":false},"5":{"id":"8595d151-72a9-42f6-b320-10310a669689","x":5.744165420532227,"y":-1.567425012588501,"fixed":false},"6":{"id":"70f49743-d782-43b1-8fa5-4c8ffc4d0be1","x":2.090463876724243,"y":-3.773918390274048,"fixed":false},"7":{"id":"a5913f77-1eb1-4115-8288-55676f1054fc","x":-2.52020001411438,"y":-4.863192081451416,"fixed":false},"8":{"id":"a14e8b47-d46e-4e38-a9fe-f5eeee88e243","x":-3.0837976932525635,"y":0.8998876810073853,"fixed":false},"9":{"id":"6d38115a-d3c6-4b27-af78-9071ac557776","x":-1.917229413986206,"y":0.8543483018875122,"fixed":false},"10":{"id":"74b9012a-95d1-4212-990a-3026fced55fa","x":-2.7343051433563232,"y":1.6880706548690796,"fixed":false},"11":{"id":"c59a62ff-d098-401f-8381-c76323ae1a7f","x":-3.0503690242767334,"y":2.5139589309692383,"fixed":false},"12":{"id":"b172a8f3-8fdd-4236-8d99-3438468a3ccf","x":-2.3110647201538086,"y":3.035205602645874,"fixed":false},"13":{"id":"536233fc-57bc-4aa7-bad8-73e54602f745","x":-1.494277000427246,"y":2.6636531352996826,"fixed":false},"14":{"id":"0498180d-36cf-4c61-971c-5ecf28090aa4","x":-0.8507122993469238,"y":2.908374786376953,"fixed":false},"15":{"id":"HiddenTablesPin","x":-1.7000000476837158,"y":1.7000000476837158,"fixed":true}},"zoom":0.9}},"navver":{"width":400,"grouping":"table"},"sqlPanelHeight":{"height":35,"isMaximized":false},"panelsHeight":{"height":47.09435745140389,"isMaximized":false}}},"preferences":{"localeId":"fr-FR","language":null}}'
+    http_version:
+  recorded_at: Tue, 18 Sep 2018 17:53:30 GMT
+recorded_with: VCR 4.0.0
