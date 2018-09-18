@@ -1,5 +1,5 @@
 RSpec.describe Sisense::API::Client do
-  SUPPORTED_HTTP_VERBS = %i[get post put delete].freeze
+  SUPPORTED_HTTP_VERBS = %i[get post put patch delete].freeze
 
   context 'constants' do
     describe 'VERB_MAP' do
