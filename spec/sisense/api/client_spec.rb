@@ -15,7 +15,7 @@ RSpec.describe Sisense::API::Client do
   end
 
   shared_examples 'a request made over http' do
-    let(:stubbed_request) { stub_request(method_used, "http://test-sisense.chronogolf.ca:80#{endpoint}") }
+    let(:stubbed_request) { stub_request(method_used, "http://test-sisense.chronogolf.ca#{endpoint}") }
 
     before do
       stubbed_request
