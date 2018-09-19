@@ -1,4 +1,5 @@
 RSpec.describe Sisense::User do
+  it_behaves_like 'a sisense resource'
   it_behaves_like 'a listable resource'
   it_behaves_like 'a retrievable resource' do
     let(:resource_id) { '5b3293ad1ed43bccb04e2029' }

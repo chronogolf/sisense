@@ -1,8 +1,9 @@
 RSpec.describe Sisense::Elasticube do
+  it_behaves_like 'a sisense resource'
   it_behaves_like 'a listable resource'
 
   subject(:elasticube) do
-    VCR.use_cassette("elasticube") { described_class.list.first }
+    VCR.use_cassette('elasticube') { described_class.list.first }
   end
 
   describe '#datasecurity' do
