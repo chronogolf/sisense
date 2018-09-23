@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://test-sisense.chronogolf.ca/api/v1/groups/5b3293ab0800930a10dd0d3b
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer sisense_access_token
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Etag:
+      - W/"10d-417e3db3"
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Sun, 23 Sep 2018 20:43:57 GMT
+      Content-Length:
+      - '269'
+    body:
+      encoding: UTF-8
+      string: '{"_id":"5b3293ab0800930a10dd0d3b","roleId":null,"name":"Admins","ad":false,"objectSid":"","dn":"","uSNChanged":"","mail":"","defaultRole":"","created":"2018-06-26T19:27:39.303Z","lastUpdated":"2018-06-26T19:27:39.303Z","ldapDomainId":null,"language":null,"admins":true}'
+    http_version:
+  recorded_at: Sun, 23 Sep 2018 20:43:57 GMT
+recorded_with: VCR 4.0.0
