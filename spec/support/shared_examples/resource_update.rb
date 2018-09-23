@@ -9,7 +9,7 @@ shared_examples 'an updatable resource' do
 
   it 'matches the informations sent' do
     updated_object = described_class.update(id: resource_id, params: params)
-    params.keys.each { |key| expect(updated_object.send(key.to_s.underscore)).to eq params[key] }
+    params.keys.each { |key| expect(updated_object.send(key.to_s.to_snake_case)).to eq params[key] }
   end
 end
 
@@ -28,6 +28,6 @@ shared_examples 'an updatable nested resource' do
 
   it 'matches the informations sent' do
     updated_object = described_class.update(id: resource_id, params: params)
-    params.keys.each { |key| expect(updated_object.send(key.to_s.underscore)).to eq params[key] }
+    params.keys.each { |key| expect(updated_object.send(key.to_s.to_snake_case)).to eq params[key] }
   end
 end

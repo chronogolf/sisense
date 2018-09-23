@@ -89,7 +89,7 @@ module Sisense
 
       def sanitized_hash(hash)
         hash.tap do |h|
-          h.keys.each { |key| h[key.underscore] = h.delete(key) }
+          h.keys.each { |key| h[key.to_snake_case] = h.delete(key) }
         end
       end
     end

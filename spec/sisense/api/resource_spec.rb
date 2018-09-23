@@ -62,7 +62,7 @@ RSpec.describe Sisense::API::Resource do
     it 'initialize a new object base on data passed as params using snake_case standard' do
       object = described_class.new(parsed_json)
       parsed_json.keys.each do |key|
-        expect(object.respond_to?(key.underscore)).to eq true
+        expect(object.respond_to?(key.to_snake_case)).to eq true
       end
     end
   end

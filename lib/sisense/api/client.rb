@@ -17,7 +17,6 @@ module Sisense
       def initialize
         uri = URI.parse(Sisense.base_uri)
         @http = Net::HTTP.new(uri.host, uri.port)
-        # @http.use_ssl = true
       end
 
       attr_reader :http
@@ -86,7 +85,7 @@ module Sisense
 
           obj.keys.each do |key|
             obj[key] = parameterize_object(obj[key]) unless obj[key].is_a?(String)
-            obj[key.to_s.camelize] = obj.delete(key)
+            obj[key.to_s.to_camel_case] = obj.delete(key)
           end
         end
       end

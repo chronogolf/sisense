@@ -1,13 +1,13 @@
 RSpec.describe String do
-  describe '#underscore' do
+  describe '#to_snake_case' do
     it 'converts any string to make the snake_case convention' do
-      expect('MyString-needs_toBe-changed'.underscore).to eq 'my_string_needs_to_be_changed'
+      expect('MyString-needs_toBe-changed'.to_snake_case).to eq 'my_string_needs_to_be_changed'
     end
   end
 
-  describe '#camelize' do
+  describe '#to_camel_case' do
     it 'converts any string to match the camelcase convention' do
-      expect('my_string_needs_to_be_changed'.camelize).to eq 'myStringNeedsToBeChanged'
+      expect('my_string_needs_to_be_changed'.to_camel_case).to eq 'myStringNeedsToBeChanged'
     end
   end
 end
