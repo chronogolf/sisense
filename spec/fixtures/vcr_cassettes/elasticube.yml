@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://test-sisense.chronogolf.ca/api/v1/elasticubes/getElasticubes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer sisense_access_token
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Etag:
+      - W/"EP9ZfrbRGYCYVhYvz13Tuw=="
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 18 Sep 2018 20:47:14 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"_id":"5b76b30dcf60bc9ad96ded30","title":"Clubs reporting","server":"LocalHost","shares":[{"partyId":"5b3293ad1ed43bccb04e2029","type":"user","permission":"w"},{"partyId":"5b7f0a4e7b5ee32ec8cebf26","type":"user","email":"admin@chronogolf.ca","permission":"r"},{"partyId":"5b7f0a4e7b5ee32ec8cebf26","type":"user","permission":"r"}],"creator":"5b3293ad1ed43bccb04e2029","revision":null,"lastBuildTimeFromNextECM":"2018-08-23T19:29:33.831Z","schedule":null,"lastUpdated":"2018-09-10T13:52:18.706Z","datasets":["aca1d5dc-22c1-43be-a610-daa142f97469","64f3e32a-9376-4375-a23a-52e5d2bfa43c","24d4cf43-16c9-4adf-b015-4138e905ff5a","fd194e40-b6fc-4f40-a65e-495952ae0bc8","9e3142c0-c665-40c4-9aa1-9fdd9c7fc923"],"oid":"92a28cb2-f995-4448-9ce9-f102f48e2936","modeling-transformations":[],"lastBuildTime":"2018-09-12T00:00:03.250Z"},{"_id":"5b77ea79368b38a59e7997f9","lastUpdated":"2018-08-22T18:25:06.107Z","title":"Chronogolf
+        B.I.","server":"LocalHost","datasets":["94f92891-825a-43eb-860f-df44dfe62898","99a240ae-9884-4b04-9872-f6a332d06df0","5c192530-2106-4250-bd6e-515de35ab2af"],"oid":"314103a7-d35b-4e9b-bf21-8812a7823e33","modeling-transformations":[],"shares":[{"partyId":"5b3293ad1ed43bccb04e2029","type":"user","permission":"w"}],"creator":"5b3293ad1ed43bccb04e2029","lastBuildTimeFromNextECM":"2018-08-22T18:25:33.300Z","lastBuildTime":"2018-08-22T18:25:33.300Z","revision":null,"schedule":null},{"_id":"5b7daaf8368b38a59e8e6340","lastUpdated":"2018-08-22T18:29:22.081Z","title":"Chronogolf
+        Sales","server":"LocalHost","datasets":["68d9921b-6fd1-4dcd-96ab-e5c46d9d2270"],"oid":"9655fb7d-a400-4d6a-bacf-ca895444eed8","modeling-transformations":[],"shares":[{"partyId":"5b3293ad1ed43bccb04e2029","type":"user","permission":"w"}],"creator":"5b3293ad1ed43bccb04e2029","lastBuildTimeFromNextECM":"2018-08-22T18:28:42.052Z","lastBuildTime":"2018-08-22T18:28:42.052Z"},{"_id":"5b901f1c9b9057d3c7e2e53c","title":"Hubspot","server":"LocalHost","shares":[{"partyId":"5b3293ad1ed43bccb04e2029","type":"user","permission":"w"}],"creator":"5b3293ad1ed43bccb04e2029","lastUpdated":"2018-09-06T15:46:49.743Z","datasets":["dff3764f-836b-4401-bbc7-31679405e9b2"],"oid":"c4e9dac8-a87b-4a47-be14-e83205e3985b","modeling-transformations":[],"lastBuildTime":"2018-09-06T15:50:31.043Z","lastBuildTimeFromNextECM":"2018-09-06T15:50:31.043Z","revision":null,"schedule":null},{"_id":"5b92be569b9057d3c7ec02c1","title":"Marketing
+        Specialist","server":"LocalHost","shares":[{"partyId":"5b3293ad1ed43bccb04e2029","type":"user","permission":"w"},{"partyId":"5b7adc8a14a8e720b4f612cf","type":"user","email":"jtraore@chronogolf.ca","permission":"r"},{"partyId":"5b7addb414a8e720b4f61355","type":"user","email":"olivier@chronogolf.ca","permission":"r"},{"partyId":"5b7adc8a14a8e720b4f612cf","type":"user","permission":"r"},{"partyId":"5b7addb414a8e720b4f61355","type":"user","permission":"r"}],"creator":"5b3293ad1ed43bccb04e2029","revision":null,"lastBuildTimeFromNextECM":null,"schedule":null,"lastUpdated":"2018-09-12T13:00:13.506Z","datasets":["3f610f2f-c18a-4789-9d43-4dbcb82c932f","ce3d6536-1f6c-42cf-98b0-835955507ed4","dd8e0d5d-56d3-42d9-a2a1-739f00f3eaac","31843e37-6112-4f82-b78e-88c144ad6106","5be944cc-24c4-44f0-b2e8-4f3a00024a08","b1a50a73-0ced-46de-9bb6-72cb014da303","36b23325-caba-46e3-bdff-5e284462e1e0","0aacb670-b84a-4baa-be2d-40e5f6123dcf"],"oid":"9bd94cad-f21e-4c3a-a54a-705ca3de4b5d","modeling-transformations":[],"lastBuildTime":"2018-09-12T23:02:30.717Z"}]'
+    http_version:
+  recorded_at: Tue, 18 Sep 2018 20:47:14 GMT
+recorded_with: VCR 4.0.0

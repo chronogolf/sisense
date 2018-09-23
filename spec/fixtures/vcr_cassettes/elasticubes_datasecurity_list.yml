@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://test-sisense.chronogolf.ca/api/elasticubes/LocalHost/Clubs%20reporting/datasecurity
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer sisense_access_token
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Etag:
+      - W/"2fa-b45b41b8"
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Wed, 19 Sep 2018 12:35:24 GMT
+      Content-Length:
+      - '762'
+    body:
+      encoding: UTF-8
+      string: '[{"_id":"5b7f0d7d368b38a59e943cdf","column":"id","cubeId":"5b76b30dcf60bc9ad96ded30","shares":[{"type":"default"}],"table":"DimClubs","datatype":"numeric","members":[],"allMembers":false,"server":"LocalHost"},{"_id":"5b7ff8059b9057d3c7afedb5","column":"id","cubeId":"5b76b30dcf60bc9ad96ded30","shares":[{"type":"group","partyId":"5b3293ab0800930a10dd0d3b","partyName":"Admins"}],"table":"DimClubs","datatype":"numeric","members":[],"allMembers":true,"server":"LocalHost"},{"_id":"5b9ba9dcaa39f9e8f2e5a08d","column":"id","cubeId":"5b76b30dcf60bc9ad96ded30","shares":[{"type":"user","partyId":"5b7adc8a14a8e720b4f612cf","partyName":"jtraore@chronogolf.ca"}],"table":"DimClubs","datatype":"numeric","members":["123","17066"],"allMembers":null,"server":"LocalHost"}]'
+    http_version:
+  recorded_at: Wed, 19 Sep 2018 12:35:25 GMT
+recorded_with: VCR 4.0.0

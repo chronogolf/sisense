@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://test-sisense.chronogolf.ca/api/elasticubes/datasecurity
+    body:
+      encoding: UTF-8
+      string: '[{"table":"DimClubs","column":"id","datatype":"numeric","server":"LocalHost","elasticube":"Clubs
+        reporting","members":[],"shares":[{"type":"default"}],"allMembers":null}]'
+    headers:
+      Authorization:
+      - Bearer sisense_access_token
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Etag:
+      - W/"d0-2bba2d4e"
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Wed, 19 Sep 2018 12:59:15 GMT
+      Content-Length:
+      - '208'
+    body:
+      encoding: UTF-8
+      string: '[{"_id":"5b7f0d7d368b38a59e943cdf","column":"id","cubeId":"5b76b30dcf60bc9ad96ded30","shares":[{"type":"default"}],"table":"DimClubs","datatype":"numeric","members":[],"allMembers":null,"server":"LocalHost"}]'
+    http_version:
+  recorded_at: Wed, 19 Sep 2018 12:59:16 GMT
+recorded_with: VCR 4.0.0

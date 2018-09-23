@@ -10,12 +10,14 @@ module Sisense
         get: Net::HTTP::Get,
         post: Net::HTTP::Post,
         put: Net::HTTP::Put,
+        patch: Net::HTTP::Patch,
         delete: Net::HTTP::Delete
       }.freeze
 
       def initialize
         uri = URI.parse(Sisense.base_uri)
         @http = Net::HTTP.new(uri.host, uri.port)
+        # @http.use_ssl = true
       end
 
       attr_reader :http
@@ -32,8 +34,12 @@ module Sisense
         request :put, path, params
       end
 
-      def delete(path, params: {})
-        request :delete, path, params
+      def patch(path, params: {})
+        request :patch, path, params
+      end
+
+      def delete(path)
+        request :delete, path
       end
 
       def parsed_response(response, object_class:)
@@ -51,7 +57,7 @@ module Sisense
         response_body.is_a?(Array)
       end
 
-      def request(method, path, params)
+      def request(method, path, params = {})
         case method
         when :get
           request = VERB_MAP[method].new(encode_path(path, params), headers)
@@ -63,8 +69,9 @@ module Sisense
       end
 
       def encode_path(path, params = nil)
-        encoded_path = CGI.escape(path)
+        encoded_path = URI.encode(path)
         return path if params.nil?
+
         encoded_params = URI.encode_www_form(params)
         [encoded_path, encoded_params].join('?')
       end
@@ -76,6 +83,7 @@ module Sisense
       def parameterize(object)
         object.tap do |obj|
           return object.map { |item| parameterize(item) } if object.is_a?(Array)
+
           obj.keys.each do |key|
             obj[key] = parameterize_object(obj[key]) unless obj[key].is_a?(String)
             obj[key.to_s.camelize] = obj.delete(key)

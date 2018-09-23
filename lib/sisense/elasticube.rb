@@ -9,7 +9,7 @@ module Sisense
     end
 
     def datasecurity
-      @datasecurity ||= ElasticubeDatasecurity.list(server: server, elasticube_title: title)
+      @datasecurity ||= ElasticubeDatasecurity.list(params: { server: server, elasticube_title: title })
     end
   end
 end

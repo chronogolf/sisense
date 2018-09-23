@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: http://test-sisense.chronogolf.ca/api/v1/users/5ba152c029ae0907d8b72d79
+    body:
+      encoding: UTF-8
+      string: '{"lastName":"UpdatedUser","email":"sisense.updateduser@chronogolf.ca"}'
+    headers:
+      Authorization:
+      - Bearer sisense_access_token
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Etag:
+      - W/"185-bff0298a"
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Tue, 18 Sep 2018 19:33:26 GMT
+      Content-Length:
+      - '389'
+    body:
+      encoding: UTF-8
+      string: '{"_id":"5ba152c029ae0907d8b72d79","email":"sisense.updateduser@chronogolf.ca","firstName":"Sisense","lastName":"UpdatedUser","created":"2018-09-18T19:32:16.941Z","lastUpdated":"2018-09-18T19:33:26.329Z","userName":"sisense.user@chronogolf.ca","active":false,"roleId":"5b3293aa1ed43bccb04e1f39","activationToken":"62372b1d3c1a76d40804ea0ca4798e05e48cd2ba","activationExpires":1537903936982}'
+    http_version:
+  recorded_at: Tue, 18 Sep 2018 19:33:26 GMT
+recorded_with: VCR 4.0.0
