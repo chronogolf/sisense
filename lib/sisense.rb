@@ -19,10 +19,11 @@ require 'sisense/widget'
 
 module Sisense
   @access_token = nil
-  @base_uri = nil
+  @hostname = nil
+  @use_ssl = false
 
   class << self
-    attr_accessor :access_token, :base_uri
+    attr_accessor :access_token, :hostname, :use_ssl
 
     def api_resources
       @api_resources ||= API::Resource.descendants.each_with_object({}) do |descendant, resources|

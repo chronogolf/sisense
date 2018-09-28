@@ -15,8 +15,9 @@ module Sisense
       }.freeze
 
       def initialize
-        uri = URI.parse(Sisense.base_uri)
+        uri = URI.parse(base_uri)
         @http = Net::HTTP.new(uri.host, uri.port)
+        @http.use_ssl = Sisense.use_ssl
       end
 
       attr_reader :http
@@ -51,6 +52,10 @@ module Sisense
       end
 
       private
+
+      def base_uri
+        @base_uri ||= Sisense.use_ssl ? "https://#{Sisense.hostname}" : "http://#{Sisense.hostname}"
+      end
 
       def collection?(response_body)
         response_body.is_a?(Array)
