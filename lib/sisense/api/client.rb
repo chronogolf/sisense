@@ -69,7 +69,24 @@ module Sisense
           request = VERB_MAP[method].new(encode_path(path), headers)
           request.body = parameterize(params).to_json
         end
-        http.request(request)
+        handle_response(http.request(request))
+      end
+
+      def handle_response(response)
+        return response if %w[200 201].include?(response.code)
+        handle_error(response)
+      end
+
+      def handle_error(response)
+        error_params = JSON.parse(response.body, symbolize_names: true)[:error]
+        case response.code
+        when '404'
+          raise Sisense::API::NotFoundError.new(error_params)
+        when '422'
+          raise Sisense::API::UnprocessableEntityError.new(error_params)
+        else
+          raise Sisense::API::Error.new(error_params)
+        end
       end
 
       def encode_path(path, params = nil)
