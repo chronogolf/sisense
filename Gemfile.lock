@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    sisense (0.1.0)
+    sisense (1.0.0)
 
 GEM
   remote: https://rubygems.org/
