@@ -73,7 +73,7 @@ module Sisense
       end
 
       def handle_response(response)
-        return response if %w[200 201].include?(response.code)
+        return response if %w[200 201 204].include?(response.code)
         handle_error(response)
       end
 

@@ -17,7 +17,7 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 
-  Sisense.base_uri = 'http://test-sisense.chronogolf.ca'
+  Sisense.hostname = 'test-sisense.chronogolf.ca'
   Sisense.access_token = 'sisense_access_token'
 
   VCR.configure do |vcr_config|
