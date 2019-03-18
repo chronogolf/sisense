@@ -74,18 +74,21 @@ module Sisense
 
       def handle_response(response)
         return response if %w[200 201 204].include?(response.code)
+
         handle_error(response)
       end
 
       def handle_error(response)
-        error_params = JSON.parse(response.body, symbolize_names: true)[:error]
+        error_params = JSON.parse(response.body, symbolize_names: true)
+        new_api_format_error_params = error_params[:error]
+        error_params = new_api_format_error_params || error_params
         case response.code
         when '404'
-          raise Sisense::API::NotFoundError.new(error_params)
+          raise Sisense::API::NotFoundError, error_params
         when '422'
-          raise Sisense::API::UnprocessableEntityError.new(error_params)
+          raise Sisense::API::UnprocessableEntityError, error_params
         else
-          raise Sisense::API::Error.new(error_params)
+          raise Sisense::API::Error, error_params
         end
       end
 

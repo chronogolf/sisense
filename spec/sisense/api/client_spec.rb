@@ -63,4 +63,50 @@ RSpec.describe Sisense::API::Client do
       end
     end
   end
+
+  describe 'errors' do
+    context 'when get 404' do
+      around { |test| VCR.use_cassette('user_retrieve_404') { test.run } }
+
+      it 'raises' do
+        expect { subject.get('/api/v1/users/5b3293ad1ed43bccb04e2029') }.to raise_error Sisense::API::NotFoundError
+      end
+    end
+
+    context 'when get 422' do
+      around { |test| VCR.use_cassette('user_retrieve_422') { test.run } }
+
+      it 'raises' do
+        expect { subject.get('/api/v1/users/5b3293ad1ed43bccb04e2029') }.to raise_error Sisense::API::UnprocessableEntityError
+      end
+    end
+
+    context 'when get other error' do
+      around { |test| VCR.use_cassette('user_retrieve_500') { test.run } }
+
+      it 'raises' do
+        expect { subject.get('/api/v1/users/5b3293ad1ed43bccb04e2029') }.to raise_error Sisense::API::Error
+      end
+    end
+
+    context 'with error details in body in legacy format' do
+      around { |test| VCR.use_cassette('user_retrieve_500_v0_9') { test.run } }
+
+      it 'collects body errors' do
+        subject.get('/api/v1/users/5b3293ad1ed43bccb04e2029')
+      rescue Sisense::API::Error => e
+        expect(e).to have_attributes(code: 'X123', status: 'error', message: 'any server error')
+      end
+    end
+
+    context 'with error details in body' do
+      around { |test| VCR.use_cassette('user_retrieve_500') { test.run } }
+
+      it 'collects body errors' do
+        subject.get('/api/v1/users/5b3293ad1ed43bccb04e2029')
+      rescue Sisense::API::Error => e
+        expect(e).to have_attributes(code: 'X123', status: 'error', message: 'any server error')
+      end
+    end
+  end
 end
