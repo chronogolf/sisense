@@ -22,7 +22,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+Sisense.access_token = 'MyToken'
+Sisense.hostname = 'bi.chronogolf.ca'
+Sisense.use_ssl = true
+
+# List all supported resources
+Sisense.api_resources
+```
 
 ## Development
 
