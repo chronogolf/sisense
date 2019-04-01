@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ```ruby
 Sisense.access_token = 'MyToken'
-Sisense.hostname = 'bi.chronogolf.ca'
+Sisense.hostname = 'bi.chronogolf.com'
 Sisense.use_ssl = true
 
 # List all supported resources
