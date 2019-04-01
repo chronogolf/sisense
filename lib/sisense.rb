@@ -31,7 +31,7 @@ module Sisense
     def api_resources
       @api_resources ||= API::Resource.descendants.each_with_object({}) do |descendant, resources|
         resources[descendant::RESOURCE_NAME] = descendant
-      end.freeze
+      end.sort_by { |key| key }.to_h.freeze
     end
   end
 end
