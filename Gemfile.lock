@@ -50,7 +50,7 @@ GEM
     ruby-progressbar (1.10.0)
     safe_yaml (1.0.4)
     unicode-display_width (1.4.0)
-    vcr (4.0.0)
+    vcr (5.0.0)
     webmock (3.4.2)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
