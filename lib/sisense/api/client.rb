@@ -111,7 +111,9 @@ module Sisense
           obj.keys.each do |key|
             obj[key] = parameterize_object(obj[key]) unless obj[key].is_a?(String)
             obj[key.to_s.to_camel_case] = obj.delete(key)
-          end
+          end if obj.respond_to?(:keys)
+
+          obj
         end
       end
 
