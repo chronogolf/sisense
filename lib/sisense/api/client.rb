@@ -67,7 +67,7 @@ module Sisense
           request = VERB_MAP[method].new(encode_path(path, params), headers)
         else
           request = VERB_MAP[method].new(encode_path(path), headers)
-          request.body = parameterize(params).to_json
+          request.body = params.to_json
         end
         handle_response(http.request(request))
       end
@@ -102,25 +102,6 @@ module Sisense
 
       def headers
         @headers ||= { 'Authorization' => "Bearer #{Sisense.access_token}", 'Content-Type' => 'application/json' }
-      end
-
-      def parameterize(object)
-        object.tap do |obj|
-          return object.map { |item| parameterize(item) } if object.is_a?(Array)
-
-          obj.keys.each do |key|
-            obj[key] = parameterize_object(obj[key]) unless obj[key].is_a?(String)
-            obj[key.to_s.to_camel_case] = obj.delete(key)
-          end if obj.respond_to?(:keys)
-
-          obj
-        end
-      end
-
-      def parameterize_object(object)
-        return parameterize(object.to_h) if Sisense::API::Resource.descendants.include?(object.class)
-        return parameterize(object) if object.is_a?(Hash)
-        return object.map { |item| item.is_a?(String) ? item : parameterize_object(item) } if object.is_a?(Array)
       end
     end
   end
