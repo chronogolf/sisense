@@ -110,7 +110,7 @@ module Sisense
           return object.map { |item| parameterize(item) } if object.is_a?(Array)
 
           obj.keys.each do |key|
-            obj[key] = parameterize_object(obj[key]) unless (obj[key].is_a?(String) or [true, false].include?(obj[key]))
+            obj[key] = parameterize_object(obj[key])
             obj[key.to_s.to_camel_case] = obj.delete(key)
           end if obj.respond_to?(:keys)
 
@@ -122,6 +122,8 @@ module Sisense
         return parameterize(object.to_h) if Sisense::API::Resource.descendants.include?(object.class)
         return parameterize(object) if object.is_a?(Hash)
         return object.map { |item| item.is_a?(String) ? item : parameterize_object(item) } if object.is_a?(Array)
+
+        object
       end
     end
   end
