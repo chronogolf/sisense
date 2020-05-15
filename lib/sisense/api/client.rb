@@ -1,8 +1,8 @@
-require 'net/http'
-require 'uri'
-require 'cgi'
-require 'json'
-require 'erb'
+require "net/http"
+require "uri"
+require "cgi"
+require "json"
+require "erb"
 
 module Sisense
   module API
@@ -88,9 +88,9 @@ module Sisense
         new_api_format_error_params = error_params[:error]
         error_params = new_api_format_error_params || error_params
         case response.code
-        when '404'
+        when "404"
           raise Sisense::API::NotFoundError, error_params
-        when '422'
+        when "422"
           raise Sisense::API::UnprocessableEntityError, error_params
         else
           raise Sisense::API::Error, error_params
@@ -113,7 +113,7 @@ module Sisense
       end
 
       def headers
-        @headers ||= { 'Authorization' => "Bearer #{Sisense.access_token}", 'Content-Type' => 'application/json' }
+        @headers ||= {"Authorization" => "Bearer #{Sisense.access_token}", "Content-Type" => "application/json"}
       end
 
       def parameterize(object)

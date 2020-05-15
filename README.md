@@ -1,7 +1,5 @@
 # Sisense
 
-[![Build Status](https://travis-ci.com/chronogolf/sisense.svg?branch=master)](https://travis-ci.com/chronogolf/sisense)
-
 This gem is a wrapper around [Sisense API](https://developers.sisense.com/display/API2/REST+API+Reference+-+v1.0)
 
 ## Installation
