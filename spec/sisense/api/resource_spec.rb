@@ -44,6 +44,7 @@ RSpec.describe Sisense::API::Resource do
        Sisense::Folder,
        Sisense::ElasticubeDatasecurity,
        Sisense::Alert,
+       Sisense::Role,
        Sisense::User].freeze
     end
 
