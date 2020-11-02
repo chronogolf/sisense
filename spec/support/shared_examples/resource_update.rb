@@ -18,7 +18,7 @@ shared_examples 'a singleton updatable resource returning a collection' do
 
   it "returns a collection" do
     updated_object = described_class.update(id: resource_id, params: params)
-    expect(updated_object).to be_a Array
+    expect(updated_object).to be_an Array
     expect(updated_object.map(&:ok).uniq).to eq [1]
   end
 
