@@ -45,7 +45,9 @@ module Sisense
       def parsed_response(response, object_class:)
         response_hash = JSON.parse(response.body)
         if collection?(response_hash)
-          response_hash.map { |json_item| object_class.new(json_item) }
+          response_hash
+            .select { |obj| obj.is_a?(Hash) }
+            .map { |json_item| object_class.new(json_item) }
         else
           object_class.new(response_hash)
         end
