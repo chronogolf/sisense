@@ -23,7 +23,6 @@ module Sisense
     def self.update(id:, params:)
       path = [resource_base_path(use_legacy_api: true), id].join('/')
       response = api_client.put(path, params: params)
-      p response
       api_client.parsed_response(response, object_class: self)
     end
 
