@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name = "sisense"
   spec.version = Sisense::VERSION
   spec.authors = ["Olivier Buffon"]
-  spec.email = ["olivier@chronogolf.ca"]
+  spec.email = ["developers@chronogolf.ca"]
 
   spec.summary = "Sisense Ruby API Client"
   spec.description = "Light API client to communicate with Sisense API"
