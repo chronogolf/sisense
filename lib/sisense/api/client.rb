@@ -1,11 +1,16 @@
-require 'net/http'
-require 'uri'
-require 'cgi'
-require 'json'
+require "net/http"
+require "uri"
+require "cgi"
+require "json"
+require "erb"
 
 module Sisense
   module API
     class Client
+      include ERB::Util
+
+      PATH_SEGMENT_PATTERN = %r{[^/]+}.freeze
+
       VERB_MAP = {
         get: Net::HTTP::Get,
         post: Net::HTTP::Post,
@@ -85,25 +90,32 @@ module Sisense
         new_api_format_error_params = error_params[:error]
         error_params = new_api_format_error_params || error_params
         case response.code
-        when '404'
+        when "404"
           raise Sisense::API::NotFoundError, error_params
-        when '422'
+        when "422"
           raise Sisense::API::UnprocessableEntityError, error_params
         else
           raise Sisense::API::Error, error_params
         end
       end
 
+      def encode_path_segments(path)
+        path.gsub PATH_SEGMENT_PATTERN do |segment|
+          url_encode(segment)
+        end
+      end
+
       def encode_path(path, params = nil)
-        encoded_path = URI.encode(path)
-        return path if params.nil?
+        encoded_path = encode_path_segments(path)
+        return encoded_path if params.nil?
 
         encoded_params = URI.encode_www_form(params)
-        [encoded_path, encoded_params].join('?')
+        uri = URI::HTTP.build(path: encoded_path, query: encoded_params)
+        uri.request_uri
       end
 
       def headers
-        @headers ||= { 'Authorization' => "Bearer #{Sisense.access_token}", 'Content-Type' => 'application/json' }
+        @headers ||= {"Authorization" => "Bearer #{Sisense.access_token}", "Content-Type" => "application/json"}
       end
 
       def parameterize(object)

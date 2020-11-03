@@ -10,13 +10,13 @@ module Sisense
       end
 
       def self.class_name
-        name.split('::')[-1]
+        name.split("::")[-1]
       end
 
       def self.resource_base_path(use_legacy_api: false)
-        raise NotImplementedError, 'Sisense::API::Resource is an abstract class' if self == Resource
+        raise NotImplementedError, "Sisense::API::Resource is an abstract class" if self == Resource
 
-        path_base = use_legacy_api ? '/api/' : '/api/v1/'
+        path_base = use_legacy_api ? "/api/" : "/api/v1/"
         path_base + self::RESOURCE_NAME
       end
 
