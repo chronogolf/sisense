@@ -10,7 +10,7 @@ shared_examples "a creatable resource" do
     end
   end
 
-  it "matches the informations sent" do
+  it "matches the information sent" do
     created_object = described_class.create(params: params)
     params.keys.each { |key| expect(created_object.send(key.to_s.to_snake_case)).to eq params[key] }
   end
