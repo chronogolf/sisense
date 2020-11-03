@@ -9,7 +9,7 @@ This gem is a wrapper around [Sisense API](https://developers.sisense.com/displa
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'sisense'
+gem "sisense"
 ```
 
 And then execute:
@@ -23,8 +23,8 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-Sisense.access_token = 'MyToken'
-Sisense.hostname = 'bi.chronogolf.com'
+Sisense.access_token = "MyToken"
+Sisense.hostname = "bi.chronogolf.com"
 Sisense.use_ssl = true
 
 # List all supported resources
