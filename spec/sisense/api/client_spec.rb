@@ -39,7 +39,7 @@ RSpec.describe Sisense::API::Client do
   end
 
   describe '#parsed_response' do
-    context 'when response is single object' do
+    context 'when response is a single object' do
       around { |test| VCR.use_cassette('user_retrieve') { test.run } }
 
       let(:response) { subject.get('/api/v1/users/5b3293ad1ed43bccb04e2029') }
@@ -49,7 +49,7 @@ RSpec.describe Sisense::API::Client do
       it { expect(parsed_response).to be_a(object_class) }
     end
 
-    context 'when response is collection' do
+    context 'when response is a collection' do
       around { |test| VCR.use_cassette('users_list') { test.run } }
 
       let(:response_collection) { subject.get('/api/v1/users') }

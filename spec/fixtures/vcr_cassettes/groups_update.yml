@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://test-sisense.chronogolf.ca/api/groups/5fa032bcc39d3e27c447cbee
+    body:
+      encoding: UTF-8
+      string: '{"name":"Test ★"}'
+    headers:
+      Authorization:
+      - Bearer sisense_access_token
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Etag:
+      - W/"d3-3882639d"
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - Express
+      X-Ua-Compatible:
+      - IE=Edge
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Wed, 19 Sep 2018 18:15:05 GMT
+      Content-Length:
+      - '211'
+    body:
+      encoding: UTF-8
+      string: '[1,{"n": 1,"nModified": 1,"ok": 1}]'
+    http_version:
+  recorded_at: Wed, 19 Sep 2018 18:15:05 GMT
+recorded_with: VCR 4.0.0
