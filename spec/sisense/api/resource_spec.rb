@@ -34,18 +34,18 @@ RSpec.describe Sisense::API::Resource do
   describe "#descendants" do
     let(:known_resources) do
       [Sisense::Alert,
-       Sisense::Connection,
-       Sisense::Dashboard,
-       Sisense::Dataset,
-       Sisense::Elasticube,
-       Sisense::ElasticubeDatasecurity, 
-       Sisense::Group,
-       Sisense::Folder,
-       Sisense::Role,
-       Sisense::Share,
-       Sisense::Translation,
-       Sisense::User,
-       Sisense::Widget,].freeze
+        Sisense::Connection,
+        Sisense::Dashboard,
+        Sisense::Dataset,
+        Sisense::Elasticube,
+        Sisense::ElasticubeDatasecurity,
+        Sisense::Group,
+        Sisense::Folder,
+        Sisense::Role,
+        Sisense::Share,
+        Sisense::Translation,
+        Sisense::User,
+        Sisense::Widget].freeze
     end
 
     it "returns all classes that inherite from the current class" do
