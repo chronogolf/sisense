@@ -1,4 +1,4 @@
-shared_examples 'a creatable resource' do
+shared_examples "a creatable resource" do
   around { |test| VCR.use_cassette("#{described_class::RESOURCE_NAME}_create") { test.run } }
 
   it "returns the created #{described_class.name} object" do
@@ -10,13 +10,13 @@ shared_examples 'a creatable resource' do
     end
   end
 
-  it 'matches the informations sent' do
+  it "matches the information sent" do
     created_object = described_class.create(params: params)
     params.keys.each { |key| expect(created_object.send(key.to_s.to_snake_case)).to eq params[key] }
   end
 end
 
-shared_examples 'a creatable nested resource' do
+shared_examples "a creatable nested resource" do
   around do |test|
     VCR.use_cassette("#{described_class::PARENT_CLASS::RESOURCE_NAME}_#{described_class::RESOURCE_NAME}_create") do
       test.run
