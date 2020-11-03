@@ -1,6 +1,6 @@
 RSpec.describe Sisense do
   let(:basic_resources) do
-    %w[alerts connections dashboards datasets elasticubes folders groups shares translations users widgets]
+    %w[alerts connections dashboards datasets elasticubes folders groups roles shares translations users widgets]
   end
   let(:nested_resources) { %w[datasecurity] }
   let(:supported_resources) { (basic_resources + nested_resources).sort }
