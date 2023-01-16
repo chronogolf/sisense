@@ -12,6 +12,13 @@ Gem::Specification.new do |spec|
   spec.description = "Light API client to communicate with Sisense API"
   spec.license = "MIT"
 
+  spec.homepage = 'https://github.com/chronogolf/sisense'
+  spec.metadata = {
+    'changelog_uri' => 'https://github.com/chronogolf/sisense/blob/master/CHANGELOG.md',
+    'source_code_uri' => 'https://github.com/chronogolf/sisense/',
+    'bug_tracker_uri' => 'https://github.com/chronogolf/sisense/issues',
+  }
+  
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
