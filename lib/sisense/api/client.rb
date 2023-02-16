@@ -91,11 +91,11 @@ module Sisense
         error_params = new_api_format_error_params || error_params
         case response.code
         when "404"
-          raise Sisense::API::NotFoundError, error_params
+          raise Sisense::API::NotFoundError.new(**error_params)
         when "422"
-          raise Sisense::API::UnprocessableEntityError, error_params
+          raise Sisense::API::UnprocessableEntityError.new(**error_params)
         else
-          raise Sisense::API::Error, error_params
+          raise Sisense::API::Error.new(**error_params)
         end
       end
 
